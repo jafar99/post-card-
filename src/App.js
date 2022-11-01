@@ -8,13 +8,13 @@ function App() {
 
   const [pageCount, setpageCount] = useState(0);
 
-  let limit = 10;
+  let limit = 2;
 
   useEffect(() => {
     const getComments = async () => {
       const res = await fetch(
-        // `http://localhost:3004/comments?_page=1&_limit=${limit}`
-        `https://jsonplaceholder.typicode.com/comments?_page=1&_limit=${limit}`
+        `http://localhost:3004/comments?_page=1&_limit=${limit}`
+        // `https://jsonplaceholder.typicode.com/comments?_page=1&_limit=${limit}`
       );
       const data = await res.json();
       const total = res.headers.get("x-total-count");
@@ -130,10 +130,9 @@ function App() {
             <p>
               {item.body}
             </p>
-            <button type="button" class="read_more_btn">Dayamayee Khan</button>
-            
-            <button type="button" class="read_more_btn"> khan_dayamayee@rice.info</button>
-            <button type="button" class="read_more_btn"> male</button>
+            <button type="button" class="read_more_btn">{item.name}</button> 
+            <button type="button" class="read_more_btn">{item.email}</button>
+            <button type="button" class="read_more_btn">{item.gender}</button>
           </div>
         </div>
        
