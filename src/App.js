@@ -30,6 +30,7 @@ function App() {
     const res = await fetch(
       `http://localhost:3004/comments?_page=${currentPage}&_limit=${limit}`
       // `https://jsonplaceholder.typicode.com/comments?_page=${currentPage}&_limit=${limit}`
+  
     );
     const data = await res.json();
     return data;
@@ -75,7 +76,7 @@ function App() {
     <div class="our_solution_category">
       <div class="solution_cards_box">
         <div class="solution_card">
-          <div class="hover_color_bubble"></div>
+          <div className="hover_color_bubble"></div>
           {/* <div class="so_top_icon">
             <svg id="Layer_1" enable-background="new 0 0 512 512" height="50" viewBox="0 0 512 512" width="40" xmlns="http://www.w3.org/2000/svg">
               <g>
